@@ -1,0 +1,40 @@
+<?php
+/**
+*
+* ImageDownload
+*
+* @author Mats Neander <matsneander@gmail.com>
+* @version 0.0.1
+* @copyright Copyright (c) 2015
+* @see http://www.processwire.com
+*/
+class ImageDownload extends WireData implements Module {
+  
+  public static function getModuleInfo() {
+    return array(
+      'title' => 'Download image',
+      'summary' => 'Adds link to original image',
+      'version' => 100,
+      'singular' => true,
+      'autoload' => true,
+    );
+  }
+
+  public function init() {
+
+    $class = $this->className(); 
+    $this->config->styles->add($this->config->urls->$class . "$class.css");
+    $this->pages->addHookAfter('InputfieldImage::renderItem', $this, 'downloadLink');
+
+  }
+        
+  public function downloadLink($event) {
+
+      $pagefile = $event->arguments[0];
+      $out = $event->return;
+      $out .= "<span class='imageDownloadLink'><a download href='{$pagefile->URL}'><i class='fa fa-download'></i> " . $this->_('Download image') . "</a></span>";
+      $event->return = $out;
+
+  }
+
+}

@@ -1,0 +1,5 @@
+.imageDownloadLink a {
+    padding: 1em;
+    display: inline-block;
+    font-weight: bold;
+}
