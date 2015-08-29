@@ -1,4 +1,5 @@
 # ImageDownload
-Downloads image from ProcessWires InputfieldImage
+
+Adds a link for downloading image from ProcessWires InputfieldImage.
 
 
