@@ -1,5 +1,18 @@
+span.imageDownloadLink {
+    position: absolute;
+    z-index: 999;
+    bottom: 12px;
+    width: 148px;
+    background: #e9eff1;
+    left: -2px;
+    box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.27);
+}
+
 .imageDownloadLink a {
-    padding: 1em;
+    padding: .5em;
     display: inline-block;
     font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+    display: block;
 }
